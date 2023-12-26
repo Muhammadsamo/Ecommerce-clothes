@@ -5,16 +5,16 @@ interface ILinkProps extends LinkProps {
 }
 
 export const SHLink = ({ className, href, ...rest }: ILinkProps) => {
-  let As = NavLink;
+  
   if (
     href.startsWith("http") ||
     href.startsWith("mailto") ||
     href.startsWith("tel")
   ) {
-    As = "a";
+    return <a {...rest} href={href} target="_blank" rel="noreferrer" />;
   }
   return (
-    <As
+    <NavLink
       className={({ isActive }) => {
         return twMerge("", className, isActive ? "" : "");
       }}

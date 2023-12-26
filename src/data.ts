@@ -1,5 +1,4 @@
 import { ProductInfo, UserReview } from "@/types/general";
-import { Cat } from "lucide-react";
 
 enum Category {
   TSHIRTS = "t-shirts",

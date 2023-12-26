@@ -3,7 +3,7 @@ import { productsData } from "@/data";
 import { FaChevronDown } from "react-icons/fa";
 import { Heading } from "../typography/Heading";
 
-export const Right = ({ category }) => {
+export const Right = ({ category }: any) => {
   const filteredProducts = productsData.filter(
     (p) => !category || p.category === category
   );
