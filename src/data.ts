@@ -8,6 +8,38 @@ enum Category {
   Hoodie = "hoodie",
 }
 
+enum DressStyles {
+  CASUAL = "Casual",
+  FORMAL = "Formal",
+  PARTY = "Party",
+  GYM = "Gym",
+}
+
+enum Colors {
+  GREEN = "#00C12B",
+  RED = "#F50606",
+  YELLOW = "#F5DD06",
+  ORANGE = "#F57906",
+  LIGHBLUE = "#06CAF5",
+  BLUE = "#063AF5",
+  PURPLE = "#7D06F5",
+  PINK = "#F506A4",
+  WHITE = "#FFFFFF",
+  BLACK = "#000000",
+}
+
+enum Sizes {
+  XXS = "XX-Small",
+  XS = "X-Small",
+  S = "Small",
+  M = "Medium",
+  L = "Large",
+  XL = "X-Large",
+  XXL = "XX-Large",
+  XXXL = "3X-Large",
+  XXXXL = "4X-Large",
+}
+
 export const newArrivals: ProductInfo[] = [
   {
     id: 1,
@@ -16,6 +48,9 @@ export const newArrivals: ProductInfo[] = [
     rating: 4.5,
     price: 120,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.BLACK,
+    size: Sizes.S,
   },
   {
     id: 2,
@@ -24,6 +59,9 @@ export const newArrivals: ProductInfo[] = [
     rating: 3.5,
     price: 240,
     category: Category.JEANS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.BLACK,
+    size: Sizes.XXXL,
   },
   {
     id: 3,
@@ -32,6 +70,9 @@ export const newArrivals: ProductInfo[] = [
     rating: 4.5,
     price: 180,
     category: Category.SHIRTS,
+    dressStyle: DressStyles.FORMAL,
+    color: Colors.RED,
+    size: Sizes.L,
   },
   {
     id: 4,
@@ -40,6 +81,9 @@ export const newArrivals: ProductInfo[] = [
     rating: 4.5,
     price: 130,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.ORANGE,
+    size: Sizes.XL,
   },
 ];
 
@@ -51,6 +95,9 @@ export const topSellings: ProductInfo[] = [
     rating: 5,
     price: 212,
     category: Category.SHIRTS,
+    dressStyle: DressStyles.FORMAL,
+    color: Colors.GREEN,
+    size: Sizes.S,
   },
   {
     id: 2,
@@ -59,6 +106,9 @@ export const topSellings: ProductInfo[] = [
     rating: 4,
     price: 145,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.ORANGE,
+    size: Sizes.S,
   },
   {
     id: 3,
@@ -67,6 +117,9 @@ export const topSellings: ProductInfo[] = [
     rating: 3,
     price: 80,
     category: Category.SHORTS,
+    dressStyle: DressStyles.GYM,
+    color: Colors.BLUE,
+    size: Sizes.XS,
   },
   {
     id: 4,
@@ -75,6 +128,9 @@ export const topSellings: ProductInfo[] = [
     rating: 4.5,
     price: 210,
     category: Category.JEANS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.BLACK,
+    size: Sizes.XXXXL,
   },
 ];
 
@@ -86,6 +142,9 @@ export const productsData: ProductInfo[] = [
     rating: 4.5,
     price: 120,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.FORMAL,
+    color: Colors.BLACK,
+    size: Sizes.XXS,
   },
   {
     id: 2,
@@ -94,6 +153,9 @@ export const productsData: ProductInfo[] = [
     rating: 3.5,
     price: 240,
     category: Category.JEANS,
+    dressStyle: DressStyles.PARTY,
+    color: Colors.BLUE,
+    size: Sizes.M,
   },
   {
     id: 3,
@@ -102,6 +164,9 @@ export const productsData: ProductInfo[] = [
     rating: 4.5,
     price: 180,
     category: Category.SHIRTS,
+    dressStyle: DressStyles.PARTY,
+    color: Colors.RED,
+    size: Sizes.XS,
   },
   {
     id: 4,
@@ -110,6 +175,9 @@ export const productsData: ProductInfo[] = [
     rating: 4.5,
     price: 130,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.ORANGE,
+    size: Sizes.XXL,
   },
 
   {
@@ -119,6 +187,9 @@ export const productsData: ProductInfo[] = [
     rating: 5,
     price: 212,
     category: Category.SHIRTS,
+    dressStyle: DressStyles.FORMAL,
+    color: Colors.GREEN,
+    size: Sizes.XXXL,
   },
   {
     id: 6,
@@ -127,6 +198,9 @@ export const productsData: ProductInfo[] = [
     rating: 4,
     price: 145,
     category: Category.TSHIRTS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.ORANGE,
+    size: Sizes.L,
   },
   {
     id: 7,
@@ -135,6 +209,9 @@ export const productsData: ProductInfo[] = [
     rating: 3,
     price: 80,
     category: Category.SHORTS,
+    dressStyle: DressStyles.GYM,
+    color: Colors.LIGHBLUE,
+    size: Sizes.M,
   },
   {
     id: 8,
@@ -143,6 +220,9 @@ export const productsData: ProductInfo[] = [
     rating: 4.5,
     price: 210,
     category: Category.JEANS,
+    dressStyle: DressStyles.CASUAL,
+    color: Colors.BLACK,
+    size: Sizes.S,
   },
 ];
 
@@ -193,27 +273,28 @@ export const filters = [
 ];
 
 export const dressStyles = [
-  { id: 1, value: "Casual" },
-  { id: 2, value: "Formal" },
-  { id: 3, value: "Party" },
-  { id: 4, value: "Gym" },
+  DressStyles.CASUAL,
+  DressStyles.FORMAL,
+  DressStyles.PARTY,
+  DressStyles.GYM,
 ];
 
 export const colors = [
-  { id: 1, value: "bg-[#00C12B]" },
-  { id: 2, value: "bg-[#F50606] " },
-  { id: 3, value: "bg-[#F5DD06]" },
-  { id: 4, value: "bg-[#F57906]" },
-  { id: 5, value: "bg-[#06CAF5]" },
-  { id: 6, value: "bg-[#063AF5]" },
-  { id: 7, value: "bg-[#7D06F5]" },
-  { id: 8, value: "bg-[#7D06F5]" },
-  { id: 9, value: "bg-[#FFFFFF]" },
-  { id: 10, value: "bg-[#000000]" },
+  { id: 1, value: `bg-[#00C12B]` },
+  { id: 2, value: `bg-[#F50606]` },
+  { id: 3, value: `bg-[#F5DD06]` },
+  { id: 4, value: `bg-[#F57906]` },
+  { id: 5, value: `bg-[#06CAF5]` },
+  { id: 6, value: `bg-[#063AF5]` },
+  { id: 7, value: `bg-[#7D06F5]` },
+  { id: 8, value: `bg-[#F506A4]` },
+  { id: 9, value: `bg-[#FFFFFF]` },
+  { id: 10, value: `bg-[#000000]` },
 ];
+
 export const sizes = [
   { id: 1, value: "XX-Small" },
-  { id: 2, value: "X-Small " },
+  { id: 2, value: "X-Small" },
   { id: 3, value: "Small" },
   { id: 4, value: "Medium" },
   { id: 5, value: "Large" },

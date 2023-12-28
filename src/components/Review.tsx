@@ -11,7 +11,7 @@ interface IProps {
 
 export const Review = ({ rating, userName, userReview, verified }: IProps) => {
   return (
-    <div className="py-7 px-8 rounded-[20px] bg-white w-[25rem] h-[15rem] border border-[#0000001A]">
+    <div className="py-7 px-8 rounded-[20px] bg-white min-w-[25rem] h-[15rem] border border-[#0000001A]">
       <Rating
         className="mb-4"
         style={{ maxWidth: "7.5rem" }}

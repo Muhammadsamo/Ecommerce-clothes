@@ -15,6 +15,9 @@ export interface ProductInfo {
   rating: number;
   price: number;
   category: string;
+  dressStyle: string;
+  color: string;
+  size: string;
 }
 
 export interface UserReview {
