@@ -1,11 +1,11 @@
-import { Review } from "../Review";
+import { Review } from "../../Review";
 import { userReviews } from "@/data";
-import { Heading } from "../typography/Heading";
+import { Heading } from "../../typography/Heading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-
+import "./ReviewSection.css";
 export const ReviewSection = () => {
   return (
     <div className="mt-20 max-w-[90rem] mx-auto">
@@ -20,11 +20,11 @@ export const ReviewSection = () => {
         spaceBetween={20}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className="mySwiper overflow-visible"
       >
         {userReviews.map((r) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide className="cursor-pointer">
               <Review key={r.id} {...r} />
             </SwiperSlide>
           );

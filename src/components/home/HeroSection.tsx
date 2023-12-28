@@ -22,7 +22,9 @@ export const HeroSection = ({ heroTitle }: IProps) => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <Button className="py-[26px] px-[70px]">Shop Now </Button>
+          <Button className="py-[26px] px-[70px] hover:bg-transparent hover:text-black border-black border">
+            Shop Now{" "}
+          </Button>
         </div>
         <div className="flex mt-10 items-center gap-16">
           <HeroInfo title="200+" desc="International Brands" />

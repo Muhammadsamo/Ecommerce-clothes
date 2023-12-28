@@ -2,11 +2,11 @@ import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { Logo } from "../Logo";
 import { NavMenu } from "../NavMenu";
 import { Input } from "../ui/Input";
+import { SHLink } from "../ui/SHLink";
 
 export const Navbar = () => {
   return (
     <header className="h-[6rem] bg-white w-screen flex items-center justify-between max-w-[90rem] mx-auto px-[6.25rem] relative">
-      {" "}
       <Logo />
       <NavMenu />
       <Input
@@ -14,9 +14,11 @@ export const Navbar = () => {
         placeholder="Search for products..."
       />
       <div className="flex gap-[14px]">
-        <span className="cursor-pointer">
-          <FaShoppingCart size="1.4rem" />
-        </span>
+        <SHLink to={"/cart"}>
+          <FaShoppingCart
+            size="1.4rem"
+          />
+        </SHLink>
         <span className="cursor-pointer">
           <FaUserCircle size="1.4rem" />
         </span>

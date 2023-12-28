@@ -1,25 +1,27 @@
-import { NavLink, LinkProps } from "react-router-dom";
-import { twMerge } from "tailwind-merge";
-interface ILinkProps extends LinkProps {
-  href: string;
-}
+import {
+  Link as RouterLink,
+  LinkProps,
+  NavLink,
+  NavLinkProps,
+} from "react-router-dom";
 
-export const SHLink = ({ className, href, ...rest }: ILinkProps) => {
-  
-  if (
-    href.startsWith("http") ||
-    href.startsWith("mailto") ||
-    href.startsWith("tel")
-  ) {
-    return <a {...rest} href={href} target="_blank" rel="noreferrer" />;
+type TProps =
+  | ({
+      as?: "Link";
+    } & LinkProps)
+  | ({ as?: "NavLink" } & NavLinkProps);
+
+export const SHLink = (props: TProps) => {
+  if (props.as === "Link") {
+    return <RouterLink {...props} />;
   }
+
   return (
     <NavLink
-      className={({ isActive }) => {
-        return twMerge("", className, isActive ? "" : "");
-      }}
-      {...rest}
-      to={href}
+      {...props}
+      className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "font-medium " : ""
+      }
     />
   );
 };
