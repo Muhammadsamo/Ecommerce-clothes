@@ -1,10 +1,10 @@
 import { Heading } from "../typography/Heading";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { orderSummary } from "@/store/slices/cartSlice";
 import { RootState } from "@/store";
+import { CheckoutButton } from "../cart/CheckoutButton";
 
 const CartOrderSummary = () => {
   const summary = useSelector(orderSummary);
@@ -12,6 +12,7 @@ const CartOrderSummary = () => {
     (state: RootState) => state.cart.discount
   );
   const shippingFee = useSelector((state: RootState) => state.cart.shippingFee);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
     <div className="w-[30rem] flex flex-col gap-6 ">
@@ -45,10 +46,11 @@ const CartOrderSummary = () => {
         />
         <Button className="px-8">Apply</Button>
       </div>
-      <Button className="py-6">
+      <CheckoutButton cartItems={cartItems} />
+      {/* <Button className="py-6">
         Go to Checkout
         <FaArrowRightLong className="ml-3 text-[1rem]" />
-      </Button>
+      </Button> */}
     </div>
   );
 };
