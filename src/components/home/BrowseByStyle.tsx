@@ -13,7 +13,7 @@ export const BrowseByStyle = () => {
       <div className="grid grid-cols-3 grid-flow-dense auto-rows-[minmax(18.125rem,_auto)] gap-5">
         <div className="col-span-1 cursor-pointer  bg-[url(/images/image11.png)] rounded-[1.25rem] bg-no-repeat bg-cover relative">
           <Link
-            to="/products/casual"
+            to="/products"
             className="absolute top-0 left-0 bottom-0 right-0 block"
           >
             <Heading
@@ -26,7 +26,7 @@ export const BrowseByStyle = () => {
         </div>
         <div className="col-span-2 cursor-pointer bg-[url(/images/image13.png)]  rounded-[1.25rem] bg-no-repeat bg-cover relative">
           <Link
-            to="/products/casual"
+            to="/products"
             className="absolute top-0 left-0 bottom-0 right-0 block"
           >
             <Heading
@@ -39,7 +39,7 @@ export const BrowseByStyle = () => {
         </div>
         <div className="col-span-2 cursor-pointer bg-[url(/images/image12.png)] rounded-[1.25rem] bg-no-repeat bg-cover relative">
           <Link
-            to="/products/casual"
+            to="/products"
             className="absolute top-0 left-0 bottom-0 right-0 block"
           >
             <Heading
@@ -52,7 +52,7 @@ export const BrowseByStyle = () => {
         </div>
         <div className="col-span-1 cursor-pointer bg-[url(/images/image14.png)] rounded-[1.25rem] bg-no-repeat bg-cover relative">
           <Link
-            to="/products/casual"
+            to="/products"
             className="absolute top-0 left-0 bottom-0 right-0 block"
           >
             <Heading

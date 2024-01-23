@@ -78,7 +78,7 @@ export const Left = ({
                   {filters.map((item) => {
                     return (
                       <div className="flex items-center space-x-2 justify-between py-2 text-[#00000099]">
-                        <Label htmlFor={item} className="cursor-pointer">
+                        <Label htmlFor={item} className="cursor-pointer w-full hover:opacity-70">
                           {item}
                         </Label>
                         <RadioGroupItem value={item} id={item} />
@@ -176,11 +176,11 @@ export const Left = ({
           </AccordionTrigger>
           <AccordionContent>
             <div className="pt-5">
-              <div className="flex flex-wrap gap-[14px]">
+              <div className="flex flex-wrap gap-x-[.875rem] gap-y-[1.5rem]">
                 {sizesData.map((s) => {
                   console.log(s.value);
                   return (
-                    <>
+                    <div>
                       <Checkbox
                         id={s.value}
                         key={s.id}
@@ -197,11 +197,11 @@ export const Left = ({
                       ></Checkbox>
                       <Label
                         htmlFor={s.value}
-                        className="peer peer-checked:text-white bg-[#F0F0F0] px-5 py-[.625rem] rounded-[3.875rem] cursor-pointer text-[#00000099] text-[.875rem] hover:bg-[black] hover:text-white ch"
+                        className="peer peer-aria-checked:text-white peer-aria-checked:bg-black bg-[#F0F0F0] px-5 py-[.625rem] rounded-[3.875rem] cursor-pointer text-[#00000099] text-[.875rem] hover:bg-[black] hover:text-white"
                       >
                         {s.value}
                       </Label>
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -227,7 +227,7 @@ export const Left = ({
                   {dressStyles.map((style) => {
                     return (
                       <div className="flex items-center space-x-2 justify-between py-2 text-[#00000099]">
-                        <Label htmlFor={style} className="cursor-pointer">
+                        <Label htmlFor={style} className="cursor-pointer w-full hover:opacity-70">
                           {style}
                         </Label>
                         <RadioGroupItem value={style} id={style} />

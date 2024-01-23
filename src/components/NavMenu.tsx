@@ -4,7 +4,7 @@ export const NavMenu = () => {
   return (
     <nav>
       <ul className="flex gap-[20px] mx-[2.5rem]">
-        <Link to="/products/1">
+        <Link to="/products">
           <li className="flex items-center cursor-pointer gap-1">
             <span>Shop</span>
             <FaChevronDown size="0.7rem" />

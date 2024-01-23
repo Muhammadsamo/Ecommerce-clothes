@@ -3,8 +3,10 @@ import { productsData } from "@/data";
 import { FaChevronDown } from "react-icons/fa";
 import { Heading } from "../typography/Heading";
 import { twMerge } from "tailwind-merge";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/slices/cartSlice";
 
-type IProps = {
+type TProps = {
   className?: string;
   category: string;
   dressStyle: string;
@@ -20,7 +22,20 @@ export const Right = ({
   sizes,
   priceRange,
   className,
-}: IProps) => {
+}: TProps) => {
+  const dispatch = useDispatch();
+  const onAddToCart = (id: number) => {
+    const product = productsData.find((prod) => prod.id === id);
+
+    dispatch(
+      addToCart({
+        item: product,
+        productId: id,
+        inc: true,
+      })
+    );
+  };
+
   const filteredProducts = productsData.filter(
     (p) =>
       (!category || p.category === category) &&
@@ -48,7 +63,7 @@ export const Right = ({
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredProducts.map((p) => {
-          return <Product key={p.id} {...p} />;
+          return <Product key={p.id} onAddToCart={onAddToCart} {...p} />;
         })}
       </div>
     </div>

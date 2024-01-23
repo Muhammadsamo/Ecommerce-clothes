@@ -6,7 +6,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const DefaultLayout = () => {
   const pathName = useLocation().pathname;
-  console.log(pathName);
+  // console.log(pathName);
   return (
     <div>
       <div className="main">

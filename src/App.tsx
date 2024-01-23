@@ -7,6 +7,8 @@ import { ProductDetails } from "./pages/ProductDetails";
 import "@smastrom/react-rating/style.css";
 import { Cart } from "./pages/Cart";
 import DefaultLayout from "./Layouts/DefaultLayout";
+import { CheckoutSuccess } from "./pages/CheckoutSuccess";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -19,7 +21,7 @@ const App = () => {
           element: <Home />,
         },
         {
-          path: "/products/:id",
+          path: "/products",
           element: <Products />,
         },
         {
@@ -31,8 +33,16 @@ const App = () => {
           element: <Cart />,
         },
         {
+          path: "/checkout-success",
+          element: <CheckoutSuccess />,
+        },
+        {
           path: "/signup",
           element: <Signup />,
+        },
+        {
+          path: "/*",
+          element: <NotFound />,
         },
       ],
     },

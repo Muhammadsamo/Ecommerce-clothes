@@ -1,8 +1,15 @@
 import CartItem from "@/components/cart/CartItem";
 import CartOrderSummary from "@/components/cart/CartOrderSummary";
 import { Heading } from "@/components/typography/Heading";
+import { RootState } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "@/store/slices/cartSlice";
 
 export const Cart = () => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  // console.log(cartItems, "CART ITEMS");
+
   return (
     <div className="max-w-[90rem] mx-auto px-[6.25rem]">
       <Heading
@@ -12,8 +19,45 @@ export const Cart = () => {
         Your cart
       </Heading>
       <div className="flex justify-between gap-4">
-        <div className="pt-5 px-6 border border-[#0000001A] rounded-[1.25rem] flex flex-col gap-6">
-          <CartItem
+        <div className="pt-5 px-6 min-w-[45.125rem] border border-[#0000001A] rounded-[1.25rem] flex flex-col gap-6">
+          {!cartItems.length ? (
+            <Heading
+              level={3}
+              className="font-bold text-[1.25rem] text-red-600 text-center"
+            >
+              Your Cart is empty!
+            </Heading>
+          ) : null}
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              name={item.name}
+              img={item.images}
+              title={item.name}
+              color={item.color}
+              size={item.size}
+              price={item.price}
+              quantity={item.quantity}
+              id={item.id}
+              setQuantity={(payload) => {
+                const qty =
+                  payload.type === "increment"
+                    ? item.quantity + 1
+                    : item.quantity - 1;
+                if (qty === 0) return;
+
+                return dispatch(
+                  addToCart({
+                    productId: item.id,
+                    quantity: qty,
+                    item: item,
+                  })
+                );
+              }}
+              removeItem={() => dispatch(removeFromCart(item.id))}
+            />
+          ))}
+          {/* <CartItem
             itemImg={"image7.png"}
             itemTitle="T-shirt With Tape Details"
             itemColor="Black"
@@ -33,7 +77,7 @@ export const Cart = () => {
             itemColor="Blue"
             itemSize="Large"
             itemPrice={240}
-          ></CartItem>
+          ></CartItem> */}
         </div>
         <div className="flex-initial h-[28.625rem] py-5 px-6 border border-[#0000001A] rounded-[1.25rem]">
           <CartOrderSummary />
