@@ -2,7 +2,7 @@ import { Rating, Star } from "@smastrom/react-rating";
 import { Heading } from "../typography/Heading";
 import { Button } from "../ui/Button";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { TQuantityChange } from "../cart/CartItem";
+// import { TQuantityChange } from "../cart/CartItem";
 
 type TProps = {
   name: string;
@@ -12,8 +12,8 @@ type TProps = {
   sizes: string[];
   colors: string[];
   quantity: number;
-  setQuantity: (payload: TQuantityChange) => void;
-  id: number;
+  // setQuantity: (payload: TQuantityChange) => void;
+  // id: number;
 };
 const Right = ({
   name,
@@ -23,8 +23,8 @@ const Right = ({
   sizes,
   colors,
   quantity,
-  setQuantity,
-  id,
+  // setQuantity,
+  // id,
 }: TProps) => {
   return (
     <div className="flex flex-col gap-4">
@@ -57,20 +57,20 @@ const Right = ({
       <div className="flex flex-col justify-between">
         <div className="bg-[#F0F0F0] text-black text-[1.25rem] rounded-[1.5rem]">
           <Button
-            onClick={setQuantity.bind(null, {
-              type: "decrement",
-              id,
-            })}
+            // onClick={setQuantity.bind(null, {
+            //   type: "decrement",
+            //   id,
+            // })}
             variant={"ghost"}
           >
             <FaMinus />
           </Button>
           {quantity}
           <Button
-            onClick={setQuantity.bind(null, {
-              type: "increment",
-              id,
-            })}
+            // onClick={setQuantity.bind(null, {
+            //   type: "increment",
+            //   id,
+            // })}
             variant={"ghost"}
           >
             <FaPlus />
