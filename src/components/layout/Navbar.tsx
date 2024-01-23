@@ -7,9 +7,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 
 export const Navbar = () => {
-  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartItemsQuantity = useSelector((state: RootState) => state.cart.items.length);
   return (
-    <header className="h-[6rem] bg-white w-screen flex items-center justify-between max-w-[90rem] mx-auto px-[6.25rem] relative">
+    <header className="h-[6rem] bg-white flex items-center justify-between z-[999] px-[6.25rem] sticky top-0 border-b border-[#0000001A]">
       <Logo />
       <NavMenu />
       <Input
@@ -19,8 +19,8 @@ export const Navbar = () => {
       <div className="flex gap-[14px] overflow-visible">
         <span className="relative cursor-pointer">
           <SHLink to={"/cart"}>
-            <span className="absolute -right-[8px] -top-[8px] rounded-full h-4 w-4 bg-red-500 text-white text-center z-10 text-sm font-bold">
-              {cartItems.length}
+            <span className="absolute -right-[8px] -top-[8px] flex items-center justify-center rounded-full h-4 w-4 bg-red-500 text-white text-center z-10 text-sm font-bold">
+              {cartItemsQuantity}
             </span>
             <FaShoppingCart size="1.4rem" />
           </SHLink>
@@ -29,7 +29,7 @@ export const Navbar = () => {
           <FaUserCircle size="1.4rem" />
         </span>
       </div>
-      <hr className="h-0 border-b border-[#0000001A] absolute w-[77.5rem] bottom-0" />
+      {/* <hr className="h-0 border-b border-[#0000001A] absolute w-[77.5rem] bottom-0" /> */}
     </header>
   );
 };

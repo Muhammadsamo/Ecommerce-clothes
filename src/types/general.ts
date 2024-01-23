@@ -10,14 +10,19 @@ export interface ComponentAttrs {
 
 export interface ProductInfo {
   id: number;
-  image: string;
+  images: string[];
   name: string;
+  description: string;
   rating: number;
   price: number;
   category: string;
   dressStyle: string;
   color: string;
   size: string;
+  newArrival?: boolean;
+  topSelling?: boolean;
+  onSale?: boolean;
+  onAddToCart?: (id: number) => void;
 }
 
 export interface UserReview {

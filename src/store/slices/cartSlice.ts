@@ -43,7 +43,7 @@ export const cartSlice = createSlice({
         state.items[existingProductIdx].quantity = inc
           ? state.items[existingProductIdx].quantity + quantity
           : quantity;
-        console.log(state.items);
+        // console.log(state.items);
         return;
       }
       if (item)
@@ -51,7 +51,7 @@ export const cartSlice = createSlice({
           ...item,
           quantity,
         });
-      console.log(state.items);
+      // console.log(state.items);
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       const productIdx = state.items.findIndex(

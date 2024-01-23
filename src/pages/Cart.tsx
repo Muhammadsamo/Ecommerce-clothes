@@ -30,7 +30,9 @@ export const Cart = () => {
           ) : null}
           {cartItems.map((item) => (
             <CartItem
-              img={item.image}
+              key={item.id}
+              name={item.name}
+              img={item.images}
               title={item.name}
               color={item.color}
               size={item.size}

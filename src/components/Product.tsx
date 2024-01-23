@@ -10,7 +10,7 @@ type TProps = ProductInfo & {
 export const Product = ({
   onAddToCart,
   id,
-  image,
+  images,
   name,
   rating,
   price,
@@ -30,7 +30,7 @@ export const Product = ({
         <MdOutlineShoppingCart size="24px" />
       </button>
       <div className="product-image w-[295px] h-[298px] bg-[#F0EEED] rounded-[1.25rem] flex items-center justify-center mb-[16px]">
-        <img className="rounded-[1.25rem]" src={image} alt={name} />
+        <img className="rounded-[1.25rem] h-full w-full" src={images[0]} alt={name} />
       </div>
       <div className="product-details flex flex-col items-start gap-2">
         <Heading level={4} className="text-black text-[20px] font-bold">

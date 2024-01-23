@@ -9,7 +9,8 @@ export type TQuantityChange = {
 };
 type TProps = {
   id: number;
-  img?: string;
+  name: string;
+  img?: string[];
   title?: string;
   size?: string;
   color?: string;
@@ -20,6 +21,7 @@ type TProps = {
 };
 const CartItem = ({
   img,
+  name,
   title,
   size,
   color,
@@ -27,13 +29,14 @@ const CartItem = ({
   quantity,
   id,
   setQuantity,
-  removeItem,
+  removeItem
 }: TProps) => {
   const itemColor = `bg-[${color}]`;
+  const imgurl =  img?.[0];
   return (
     <div className="w-[41.6875rem] flex border-b border-[#0000001A] pb-5 ">
       <div className="w-1/4">
-        <img src={img} alt={img} className="h-[7.75rem] rounded-[.5411rem]" />
+        <img src={imgurl} alt={name} className="h-[7.75rem] rounded-[.5411rem]" />
       </div>
       <div className="w-3/4 flex justify-between">
         <div className="flex flex-col">
@@ -87,5 +90,6 @@ const CartItem = ({
     </div>
   );
 };
+
 
 export default CartItem;
